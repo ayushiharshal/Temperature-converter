@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="head">
+  <h1>Temperature Converter</h1>
+  <img src="temp.jpeg">
+  </div>
+  <div id="container">
+
+    <div class="input-div">
+      <label class="nm"> Celsius </label> 
+      <input type="number" value="0" id="cel" class="inp">
+      <span class="icon">&#8451</span>
+    </div>
+    
+<div class="input-div">
+  <label class="nm"> Fahrenheit </label> 
+  <input type="number" value="32" id="fah" class="inp">
+  <span class="icon">&#8457</span>
+</div>
+
+<div class="input-div">
+  <label class="nm"> Kelvin </label> 
+  <input type="number" value="273.15" id="kel" class="inp">
+  <span class="icon">&#8490</span>
+</div>
+    </div>
+    
+      <button id="btn"> Clear all</button>
+    <script>
+      var cel = document.getElementById("cel");
+      var fah = document.getElementById("fah");
+      var kel = document.getElementById("kel");
+
+      cel.addEventListener('input',function(){
+        let c = parseFloat(this.value);
+        let f = (c * 9/5)  + 32;
+        let k = c + 273.15;
+        if(!Number.isInteger(f)){
+          f = f.toFixed(4);
+        }
+        if(!Number.isInteger(k)){
+          k = k.toFixed(4);
+        }
+        fah.value = f;
+        kel.value=k;
+      });
+
+
+      fah.addEventListener('input',function(){
+        let f = parseFloat(this.value);
+        let c = (f - 32) * 5/9;
+        let k = (f - 32) * 5/9 + 273.15;
+        if(!Number.isInteger(c)){
+          c = c.toFixed(4);
+        }
+        if(!Number.isInteger(k)){
+          k = k.toFixed(4);
+        }
+        cel.value = c;
+        kel.value=k;
+      });
+
+      kel.addEventListener('input',function(){
+        let k = parseFloat(this.value);
+        let c = k - 273.15;
+        let f = (k - 273.15) * 9/5 + 32;
+        if(!Number.isInteger(c)){
+          c = c.toFixed(4);
+        }
+        if(!Number.isInteger(k)){
+          f = f.toFixed(4);
+        }
+        cel.value = c;
+        fah.value=f;
+      });
+
+      btn.addEventListener('click', ()=>{
+    cel.value = 0;
+    fah.value = 32;
+    kel.value = 273.15;
+})
+
+    </script>
+</body>
+</html>

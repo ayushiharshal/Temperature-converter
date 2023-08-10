@@ -1,0 +1,58 @@
+.head{
+  display: flex;
+  justify-content: center;
+}
+body{
+  background-color: rgb(27 128 131);
+  padding: 50px;
+}
+h1{
+  text-align: center;
+}
+#container{
+  text-align: center;
+  background-color:#87d3de;
+  padding: 50px;
+}
+.inp{
+  margin: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+label{
+  font-size: 20px;
+  font-weight: bold;
+}
+.icon{
+  height: 60px;
+  padding: 0 5px;
+  text-align: center;
+  font-size: 20px;
+  background:#4d5964;
+  color: #fff;
+
+}
+img{
+  height: 50px;
+  width:50px;
+  margin:10px;
+}
+#btn{
+  margin-top: 25px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 10%;
+  justify-content:center;
+  display: flex;
+  cursor:pointer;
+  margin-left: 45%;
+}
+
+#btn:hover{
+  background: #4d5964;
+  color: #fff;
+}
+.nm{
+  margin-left: 10%;
+}
